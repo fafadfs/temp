@@ -21,8 +21,7 @@ for name, opt in [
         Dense(256, activation='relu'),
         Dense(10, activation='softmax')
     ])
-    model.compile(opt, 'sparse_categorical_crossentropy',
-                  metrics=['accuracy'])
+    model.compile(opt, 'sparse_categorical_crossentropy',metrics=['accuracy'])
     h = model.fit(x, y, epochs=5, batch_size=128, verbose=0)
     results[name] = h.history
     loss, acc = model.evaluate(xt, yt, verbose=0)
