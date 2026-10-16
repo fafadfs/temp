@@ -10,7 +10,7 @@ x, y = data.data, data.target
 a, b, c, d = train_test_split(
     x, y, test_size=0.2, random_state=42
 )
-  sc = StandardScaler()`
+sc = StandardScaler()
 a, b = sc.fit_transform(a), sc.transform(b)
 
 for act in ['relu', 'tanh', 'sigmoid']:
@@ -25,3 +25,5 @@ for act in ['relu', 'tanh', 'sigmoid']:
     model.fit(a, c, epochs=30, verbose=0)
     loss, acc = model.evaluate(b, d, verbose=0)
     print(act, "Accuracy:", acc, "Loss:", loss)
+
+# done by sah
